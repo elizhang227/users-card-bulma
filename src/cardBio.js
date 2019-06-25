@@ -4,9 +4,9 @@ const cardBioStyle = {
     width: '200px',
     background: 'white',
     padding: '16px',
-    margin: '3px 3px 3px',
-    borderBottomLeftRadius: '5px',
-    borderBottomRightRadius: '5px',
+    margin: '4px 3px 3px',
+    borderBottomLeftRadius: '3px',
+    borderBottomRightRadius: '3px',
 }
 
 const pStyle = {

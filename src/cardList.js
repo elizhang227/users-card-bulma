@@ -10,7 +10,9 @@ const listStyle = {
     flexWrap: 'wrap'
 }
 
-
+const liStyle = {
+    margin: '10px'
+}
 
 
 const CardList = props => {
@@ -19,7 +21,7 @@ const CardList = props => {
         <ul style={listStyle}>
             {userData.length > 0 ? 
                 userData.map(user => 
-                    <li key={user.login.uuid}>
+                    <li key={user.login.uuid} style={liStyle}>
                         <Card user={user} />
                         <CardBio user={user} />
                     </li>
