@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Card from './card';
+import CardBio from './cardBio';
 
 const listStyle = {
     listStyleType: 'none',
-    margin: 0,
-    padding: 0
+    display: 'flex',
+    flexWrap: 'wrap'
 }
+
+
+
 
 const CardList = props => {
     const { userData } = props;
@@ -17,6 +21,7 @@ const CardList = props => {
                 userData.map(user => 
                     <li key={user.login.uuid}>
                         <Card user={user} />
+                        <CardBio user={user} />
                     </li>
                 )
             :
