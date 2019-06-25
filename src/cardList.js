@@ -1,16 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import Card from './card';
+
+const listStyle = {
+    listStyleType: 'none',
+    margin: 0,
+    padding: 0
+}
 
 const CardList = props => {
-    //console.log("props are", props);
     const { userData } = props;
     return (
-        <ul>
-            <li>
-            {userData.username.first}&nbsp;
-            {userData.username.last}
-            </li>
+        <ul style={listStyle}>
+            {userData.length > 0 ? 
+                userData.map(user => 
+                    <li key={user.login.uuid}>
+                        <Card user={user} />
+                    </li>
+                )
+            :
+                <li>No User Data</li>
+            }
         </ul>
     )
 }
 
 export default CardList;
+
+CardList.propTypes = {
+    userData: PropTypes.array
+}
