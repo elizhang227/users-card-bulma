@@ -1,35 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card from './card';
-import CardBio from './cardBio';
+import ProfileCard from './card';
+// import CardBio from './cardBio';
 
-const listStyle = {
-    listStyleType: 'none',
-    display: 'flex',
-    flexWrap: 'wrap'
-}
-
-const liStyle = {
-    margin: '10px'
-}
-
+import { Section, Columns, Column } from 'bloomer';
 
 const CardList = props => {
     const { userData } = props;
     return (
-        <ul style={listStyle}>
-            {userData.length > 0 ? 
-                userData.map(user => 
-                    <li key={user.login.uuid} style={liStyle}>
-                        <Card user={user} />
-                        <CardBio user={user} />
-                    </li>
-                )
-            :
-                <li>No User Data</li>
-            }
-        </ul>
+        <Section>
+            <Columns>
+                {userData.length > 0 ? 
+                    userData.map(user => 
+                        <Column>
+                            <ProfileCard user={user} />
+                            {/* <CardBio user={user} /> */}
+                        </Column>
+                    )
+                :
+                    <Column>No User Data</Column>
+                }
+            </Columns>
+        </Section>
     )
 }
 

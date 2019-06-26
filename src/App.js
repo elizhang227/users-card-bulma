@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import CardList from './cardList';
 
-import './App.css';
+import 'bulma/css/bulma.css';
+// import './App.css';
 
 class App extends Component {
   state = {
