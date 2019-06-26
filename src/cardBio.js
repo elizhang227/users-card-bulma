@@ -9,18 +9,28 @@ const cardBioStyle = {
     borderBottomRightRadius: '3px',
 }
 
+const bioInfoStyle = {
+    //wordWrap: 'break-word',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    fontSize: '12px'
+}
+
 const pStyle = {
-    wordWrap: 'break-word',
-    margin: 0
+    margin: 0,
+    fontFamily: "'Source Sans Pro', sans-serif"
 }
 
 const CardBio = props => {
     const { user } = props;
     return (
         <div className="card" style={cardBioStyle}>
-            <p style={pStyle}>{user.location.state}</p>
-            <p style={pStyle}>Age: {user.dob.age}</p>
-            <p style={pStyle}>#: {user.cell}</p>
+            <div style={bioInfoStyle}>
+                <p style={pStyle}><b>Location:</b> {user.location.city}, {user.location.state}</p>
+                <p style={pStyle}><b>Age:</b> {user.dob.age}</p>
+                <p style={pStyle}><b>Phone:</b> {user.cell}</p>
+            </div>
         </div>
     )
 }

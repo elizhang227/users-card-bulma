@@ -21,26 +21,45 @@ const listImgStyle = {
 }
 
 const iconStyle = {
-    margin: '0 15px -50px 0'
+    margin: '105px 15px 0 0',
+    color: '#586570'
 }
 
 const icon2Style = {
-    margin: '0 0 0 15px'
+    margin: '105px 0 0 15px'
 }
 
-const lineUpStyle = {
+const bottomDivStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: '20px'
 }
 
-const lineUpTopStyle = {
+const topDivStyle = {
     display: 'flex',
     justifyContent: 'space-between',
 }
 
+const midDivStyle = {
+    display: 'flex',
+    justifyContent: 'space-between'
+}
+
 const pStyle = {
-    margin: 0
+    margin: 0,
+    fontFamily: "'Source Sans Pro', sans-serif"
+}
+
+const test = {
+    color: 'white'
+}
+
+const test2 = {
+    color: '#586570'
+}
+
+const test3 = {
+    color: '#E09F8F'
 }
 
 const Card = props => {
@@ -48,20 +67,20 @@ const Card = props => {
     return (
         <div>
             <div className="card" style={cardStyle}>
-                <div style={lineUpTopStyle}>
-                    <i className="fas fa-ellipsis-v"></i>
+                <div style={topDivStyle}>
+                    <i className="fas fa-ellipsis-v" style={test}></i>
                     <img src="/images/active.png" alt="active"></img>
-                    <i className="fas fa-eye"></i>
+                    <i className="fas fa-eye" style={test}></i>
                 </div>
-                <div>
+                <div style={midDivStyle}>
                     <i className="far fa-envelope" style={iconStyle}></i>
                     <img src={user.picture.large} style={listImgStyle} alt={`${user.name.first} headshot`} />
                     <i className="far fa-comment-dots" style={icon2Style}></i>
                 </div>
-                <div style={lineUpStyle}>
-                    <i className="fas fa-plus"></i>
+                <div style={bottomDivStyle}>
+                    <i className="fas fa-plus" style={test2}></i>
                     <p style={pStyle}>{user.name.first} {user.name.last}</p>
-                    <i className="fas fa-heart"></i>
+                    <i className="fas fa-heart" style={test3}></i>
                 </div>
             </div>
         </div>
